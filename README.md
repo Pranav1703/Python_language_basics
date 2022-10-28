@@ -1,1 +1,1 @@
-# notes
+#include<stdio.h>
