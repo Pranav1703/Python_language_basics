@@ -1,1 +1,31 @@
+operator-description-syntax
 
+&  - Bitwise_AND         - x & y
+|  - Bitwise_Or          - x | y
+~  - Bitwise_NOT         - x~ 
+^  - Bitwise_XOR         - x ^ y
+>> - Bitwise_right_shift - x>>
+<< - Bitwise_left_shift  - x<<
+ examples with output:
+ Examples of Bitwise operators 
+ a = 20 
+ b = 8 
+ # Print bitwise AND operation 
+ print(a & b) 
+ # Print bitwise OR operation
+ print(a | b) 
+ # Print bitwise NOT operation 
+ print(~a) 
+ # print bitwise XOR operation
+ print(a ^ b) 
+ # print bitwise right shift operation 
+ print(a >> 2)
+ # print bitwise left shift operation 
+ print(a << 2)
+ output:
+ 0 
+ 28-
+ 21 
+ 28
+ 5 
+ 80
