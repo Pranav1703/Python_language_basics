@@ -1,0 +1,6 @@
+x,n = input().split() #or it can be written as x,n=map(int,input().split())
+x = int(x)
+n = int(n)
+power = x**n
+
+print(power)
