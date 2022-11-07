@@ -1,0 +1,11 @@
+N = input()
+
+evensum = 0 
+oddsum = 0
+for i in str(N):
+    if(int(i)%2==0):
+        evensum+=int(i)
+    else:
+        oddsum+=int(i)
+
+print(evensum,oddsum,sep=' ')
