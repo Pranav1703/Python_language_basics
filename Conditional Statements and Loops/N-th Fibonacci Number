@@ -1,0 +1,117 @@
+approach_1:
+'''
+    Time complexity: O(2^N)
+    Space complexity: O(N) 
+
+    Where 'N' reprents the "Nth" number .
+'''
+
+def fibonacciNumber(n):
+    
+    mod = int(1e9 + 7)
+
+    # Base Case
+    if (n <= 1):
+        return n
+    
+    # Recursive call
+    return (fibonacciNumber(n - 1) + fibonacciNumber(n - 2)) % mod
+
+approach_2:
+'''
+    Time complexity: O(N)
+    Space complexity: O(N) 
+
+    Where 'N' reprents the "Nth" number .
+'''
+
+def fibonacciNumber(n):
+    
+    mod = int(1e9 + 7)
+
+    # Create an array to store solution
+    dp=[0 for i in range(n + 1)]
+    dp[1] = 1
+    
+    # Iterate i from 2 to N and find ith Fibonacci Number 
+    for i in range(2, n + 1):
+        dp[i] = (dp[i - 1] + dp[i - 2]) % mod
+    
+    # Return the Nth Fibonacci Number
+    return dp[n]
+
+approach_3:
+'''
+    Time complexity: O(N)
+    Space complexity: O(1) 
+
+    Where 'N' reprents the "Nth" number .
+'''
+
+def fibonacciNumber(n):
+    
+    mod = int(1e9 + 7)
+    a = 0 
+    b = 1 
+
+    for i in range(2, n + 1):
+
+        # The variable c stores the ith Fibonacci Number
+        c = (a + b) % mod
+    
+        # Updating values of a and b
+        a = b
+        b = c
+    
+    # The variable b stores the Nth Fibonacci Number
+    return b
+
+approach_4:
+'''
+    Time Complexity: O(log(N)).
+    Space Complexity: O(log(N)).
+
+    Where 'N' is the given integer.
+'''
+
+def multiply(a, b):
+    
+    mod = int(1e9 + 7)
+    c = [[0 for i in range(2)] for j in range(2)]
+    
+    for i in range(2):
+        for j in range(2):
+            for k in range(2):
+                c[i][k] = (c[i][k] + a[i][j] * b[j][k]) % mod
+                
+    return c
+
+# Function to calclate n'th power of a matrix.
+def matrix_power(coef, n):
+    
+    # To store the resultant matrix.
+    res = [[1, 0], [0, 1]]
+    
+    # While loop till n > 0.
+    while n > 0:
+        
+        # If n is odd, multiply res with coef.
+        if (n % 2 != 0):
+            res = multiply(res, coef)
+            
+        # Multiply coef with coef and update n to n//2.
+        coef = multiply(coef, coef)
+        n //= 2
+        
+    return res
+
+def fibonacciNumber(n):
+    
+    coef = [[0, 1], [1, 1]]
+    
+    # Calculating the (n-1)th power of the coef matrix.
+    res = matrix_power(coef, n - 1)
+    
+    # Return the bottom right element of the resultant matrix.
+    return res[1][1]
+            
