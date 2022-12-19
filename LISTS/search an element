@@ -1,0 +1,17 @@
+n=int(input())
+arr=input().split()
+x = input()
+
+arr= list(arr)
+flag = 0
+for i in range(n):
+    if arr[i] == x:
+        flag = 1
+        break
+if flag == 1:
+    print(i)
+else:
+    print("-1")
+    
+    
+#runtime = 183ms
