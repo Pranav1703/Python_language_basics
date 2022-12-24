@@ -1,0 +1,23 @@
+n = int(input())
+
+#arr = list(input().split())
+arr = [i for i in input().split()]
+k = int(input())
+
+
+temp = []
+
+for i in range(k,n):
+    temp.append(arr[i])
+    
+for i in range(0,k):
+    temp.append(arr[i])
+    
+arr = temp.copy()
+#s= str(arr)                    
+#s = s.replace(',','')          #this three lines of also works but it has unneccesary spaces.  
+#print(s)
+
+for i in range(0,n):
+    
+    print(arr[i],end=" ")
