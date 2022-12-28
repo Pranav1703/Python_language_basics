@@ -1,0 +1,5 @@
+def countWords(string) :
+	# Your code goes here
+    
+    return(len(string.split()))
+    
