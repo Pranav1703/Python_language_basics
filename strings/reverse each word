@@ -1,0 +1,11 @@
+
+def reverseEachWord(string) :
+    
+    #Your code goes here.
+    new_s = string.split()
+    
+    s = [i[::-1] for i in new_s]
+    
+    new_string = ' '.join(s)
+    
+    return new_string
